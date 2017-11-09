@@ -11,7 +11,11 @@
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/menu.css">
 <style type="text/css">
-
+	td>a{
+		display: block;
+		text-decoration: none;
+		color:gray;
+	}
 </style>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 
@@ -34,10 +38,11 @@
 		for(GuestDto bean : list){
 		%>
 		<tr>
-			<td><%=bean.getSabun() %></td>
-			<td><%=bean.getName() %></td>
-			<td><%=bean.getNalja() %></td>
-			<td><%=bean.getPay() %></td>
+		
+			<td><a href="detail.do?idx=<%=bean.getSabun() %>"><%=bean.getSabun() %></a></td>
+			<td><a href="detail.do?idx=<%=bean.getSabun() %>"><%=bean.getName() %></a></td>
+			<td><a href="detail.do?idx=<%=bean.getSabun() %>"><%=bean.getNalja() %></a></td>
+			<td><a href="detail.do?idx=<%=bean.getSabun() %>"><%=bean.getPay() %></a></td>
 		</tr>
 		<%} %>
 	</table>

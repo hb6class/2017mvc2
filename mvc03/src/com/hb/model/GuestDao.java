@@ -22,8 +22,29 @@ public class GuestDao {
 		}
 	}
 	
+	public GuestDto selectOne(int sabun){
+		String sql="SELECT * FROM GUEST01 WHERE SABUN=?";
+		GuestDto bean = new GuestDto();
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, sabun);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				bean.setSabun(rs.getInt("sabun"));
+				bean.setName(rs.getString("name"));
+				bean.setNalja(rs.getDate("nalja"));
+				bean.setPay(rs.getInt("pay"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			destroy();
+		}
+		return bean;
+	}
+	
 	public void insertOne(int sabun,String name,int pay){
-		String sql="insert into guest01 values (?,?,sysdate,?)";
+		String sql="INSERT INTO GUEST01 VALUES (?,?,SYSDATE,?)";
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, sabun);
@@ -39,7 +60,7 @@ public class GuestDao {
 	}
 	
 	public ArrayList<GuestDto> ListAll(){
-		String sql="select * from guest01";
+		String sql="SELECT * FROM GUEST01";
 		ArrayList<GuestDto> list=new ArrayList<GuestDto>();
 		try {
 			pstmt=conn.prepareStatement(sql);
