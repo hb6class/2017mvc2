@@ -1,0 +1,23 @@
+.menu{
+		overflow: hidden;
+		background-color: gray;
+	}
+	.menu>ul{
+		padding: 0px;
+		width: 400px;
+		margin: 0px auto;
+	}
+	.menu>ul>li{
+		float: left;
+		list-style: none;
+		width: 100px;
+	}
+	.menu>ul>li>a{
+		display:block;
+		text-align: center;
+		text-decoration: none;
+		color: white;
+	}
+	.menu>ul>li:hover{
+		background-color: red;
+	}
