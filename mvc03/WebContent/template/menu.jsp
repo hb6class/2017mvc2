@@ -8,7 +8,7 @@
 			<ul>
 				<li><a href="index.do">HOME</a></li>
 				<li><a href="list.do">LIST</a></li>
-				<li><a href="#">menu3</a></li>
+				<li><a href="add.do">ADD</a></li>
 				<li><a href="#">menu4</a></li>
 			</ul>
 		</div>

@@ -20,4 +20,20 @@
   	<servlet-name>page2</servlet-name>
 	<url-pattern>/list.do</url-pattern>  
   </servlet-mapping>
+  <servlet>
+  	<servlet-name>page3</servlet-name>
+  	<servlet-class>com.hb.controller.AddController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>page3</servlet-name>
+	<url-pattern>/add.do</url-pattern>  
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>page4</servlet-name>
+  	<servlet-class>com.hb.controller.InsertController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>page4</servlet-name>
+	<url-pattern>/insert.do</url-pattern>  
+  </servlet-mapping>
 </web-app>
