@@ -12,4 +12,12 @@
   	<servlet-name>page1</servlet-name>
 	<url-pattern>/index.do</url-pattern>  
   </servlet-mapping>
+  <servlet>
+  	<servlet-name>page2</servlet-name>
+  	<servlet-class>com.hb.controller.ListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>page2</servlet-name>
+	<url-pattern>/list.do</url-pattern>  
+  </servlet-mapping>
 </web-app>

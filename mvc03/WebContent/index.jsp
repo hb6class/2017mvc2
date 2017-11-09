@@ -25,7 +25,9 @@
 </script>
 </head>
 <body>
-<jsp:include page="template/header.jsp"></jsp:include>
+<jsp:include page="template/header.jsp">
+	<jsp:param value="./" name="path"/>
+</jsp:include>
 <jsp:include page="template/menu.jsp"></jsp:include>
 			<div class="bxslider">
 				<div>

@@ -5,7 +5,9 @@
 <body>
 	<div class="container_12">
 		<div class="header grid_5">
-			<img alt="logo" src="imgs/logo.jpg"/>
+			<a href="./">
+			<img alt="logo" src="<%=request.getParameter("path") %>imgs/logo.jpg"/>
+			</a>
 		</div>
 		<div class="header grid_6">
 			<form action="#" method="post">

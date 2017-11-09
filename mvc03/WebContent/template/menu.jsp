@@ -6,8 +6,8 @@
 	
 		<div class="menu grid_12">
 			<ul>
-				<li><a href="#">menu1</a></li>
-				<li><a href="#">menu2</a></li>
+				<li><a href="index.do">HOME</a></li>
+				<li><a href="list.do">LIST</a></li>
 				<li><a href="#">menu3</a></li>
 				<li><a href="#">menu4</a></li>
 			</ul>
