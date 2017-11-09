@@ -18,6 +18,7 @@
 	}
 </style>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
 
 </head>
 <body>

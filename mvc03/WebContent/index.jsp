@@ -18,9 +18,13 @@
 </style>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+
 <script type="text/javascript">
-	$(function() {
+$(function() {
 		$('.bxslider').bxSlider({'auto':true});
+		
+		
 	});
 </script>
 </head>

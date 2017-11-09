@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/menu.css">
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript">
 <%GuestDto bean=(GuestDto)request.getAttribute("dto"); %>
 	$(function() {
