@@ -14,6 +14,30 @@ public class GuestDao {
 
 	public GuestDao() {
 	}
+	
+	public int addOne(String[] params){
+		String sql="insert into guest01 values (?,?,sysdate,?)";
+		int sabun=Integer.parseInt(params[0].trim());
+		String name=params[1].trim();
+		int pay=Integer.parseInt(params[2].trim());
+		
+		try{
+			pstmt=MyOracle.getConnection().prepareStatement(sql);
+			pstmt.setInt(1, sabun);
+			pstmt.setString(2, name);
+			pstmt.setInt(3, pay);
+			return pstmt.executeUpdate();
+		}catch(Exception e){
+			System.out.println("dao addOne() ¿¡·¯");
+			return 0;
+		}finally{
+			try{
+				if(pstmt!=null)pstmt.close();
+				if(MyOracle.getConnection()!=null)MyOracle.getConnection().close();
+			}catch(Exception ex){}
+		}
+		
+	}
 
 	public ArrayList<GuestDto> selectAll(){
 		String sql="select * from guest01";

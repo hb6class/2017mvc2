@@ -11,15 +11,15 @@
 	<form action="add.do" method="post">
 	<div>
 		<label for="sabun">sabun</label>
-		<input type="text" name="sabun"/>
+		<input type="text" name="sabun" value="${sabun }"/>${err00 }
 	</div>
 	<div>
 		<label for="name">name</label>
-		<input type="text" name="name"/>
+		<input type="text" name="name" value="${name }"/>${err01 }
 	</div>
 	<div>
 		<label for="pay">pay</label>
-		<input type="text" name="pay"/>
+		<input type="text" name="pay" value="${pay }"/>${err02 }
 	</div>
 	<div>
 		<button>입력</button>
