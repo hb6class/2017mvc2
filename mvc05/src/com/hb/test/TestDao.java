@@ -7,7 +7,7 @@ import com.hb.model.GuestDto;
 
 public class TestDao {
 	
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		GuestDao dao=new GuestDao();
 		ArrayList<GuestDto> list = dao.selectAll();
 		
