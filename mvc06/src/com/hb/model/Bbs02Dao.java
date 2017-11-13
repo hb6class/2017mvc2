@@ -26,8 +26,25 @@ public class Bbs02Dao {
 		this.pw=pw;
 	}
 	
+	public void insertOne(String sub) throws SQLException{
+		//insert into bbs03 values(
+		// bbs3_seq.nextval,sub,sysdate,0,bbs3_seq.currval,0,0
+		//)
+		String sql="insert into bbs03 values("
+				+ "bbs03_seq.nextval,?,sysdate,0,bbs03_seq.currval,0,0)";
+		try{
+			pstmt=MyOracle.getConnection(driver,url,id,pw).prepareStatement(sql);
+			pstmt.setString(1, sub);
+			pstmt.executeUpdate();
+		}finally{
+			if(pstmt!=null)pstmt.close();
+			if(MyOracle.getConnection(driver,url,id,pw)!=null)MyOracle.getConnection(driver,url,id,pw).close();
+		}
+	}
+	
+	
 	public void cntPlus(int idx) throws SQLException{
-		String sql="update bbs02 set cnt=cnt+1 where idx=?";
+		String sql="update bbs03 set cnt=cnt+1 where idx=?";
 		pstmt=conn.prepareStatement(sql);
 		pstmt.setInt(1, idx);
 		pstmt.executeUpdate();
@@ -35,7 +52,7 @@ public class Bbs02Dao {
 	}
 	
 	public Bbs02Dto selectOne(int idx){
-		String sql="select * from bbs02 where idx=?";
+		String sql="select * from bbs03 where idx=?";
 		Bbs02Dto bean=new Bbs02Dto();
 		conn=MyOracle.getConnection(driver,url,id,pw);
 		try{
@@ -70,7 +87,7 @@ public class Bbs02Dao {
 	}
 	
 	public List<Bbs02Dto> selectAll() throws SQLException{
-		String sql="select * from bbs02 order by idx desc";
+		String sql="select * from bbs03 order by idx desc";
 		List<Bbs02Dto> list=new ArrayList<Bbs02Dto>();
 		try{
 		pstmt=MyOracle.getConnection(driver,url,id,pw).prepareStatement(sql);
