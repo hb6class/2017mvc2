@@ -6,6 +6,8 @@ import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.hb.model.Bbs02Dao;
 import com.hb.model.Bbs02Dto;
 
-//@WebServlet(value="/list.do")
+@WebServlet(value="/list.do"
+	,initParams={
+		@WebInitParam(name="driver",value="oracle.jdbc.OracleDriver")
+		,@WebInitParam(name="url",value="jdbc:oracle:thin:@localhost:1521:xe")
+		,@WebInitParam(name="id",value="scott")
+		,@WebInitParam(name="pw",value="tiger")})
 public class ListController extends HttpServlet {
 
 	@Override
