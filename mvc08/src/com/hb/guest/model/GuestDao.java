@@ -42,6 +42,24 @@ public class GuestDao {
 		}
 	}
 	
+	public void insertOne(int sabun,String st1,String st2,String st3){
+		String sql="insert into guest03 values (?,?,sysdate,?,?)";
+		try{
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, sabun);
+			pstmt.setString(2, st1);
+			pstmt.setString(3, st2);
+			pstmt.setString(4, st3);
+			pstmt.executeUpdate();
+		}catch(Exception e){	
+		}finally{
+			try{
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e){}
+		}
+	}
+	
 	public List<GuestDto> selectAll(){
 		String sql="select * from guest03";
 		List<GuestDto> list = new ArrayList<GuestDto>();
@@ -53,6 +71,8 @@ public class GuestDao {
 				bean.setSabun(rs.getInt("sabun"));
 				bean.setName(rs.getString("name"));
 				bean.setNalja(rs.getDate("nalja"));
+				bean.setFileOrgin(rs.getString("fileorgin"));
+				bean.setFilename(rs.getString("filename"));
 				list.add(bean);
 			}
 		}catch(Exception e){

@@ -14,14 +14,21 @@
 			<th>사번</th>
 			<th>이름</th>
 			<th>날짜</th>
+			<th>파일</th>
 		</tr>
 		<c:forEach items="${alist }" var="bean">
 			<tr>
 				<td>${bean.sabun }</td>
 				<td>${bean.name }</td>
 				<td>${bean.nalja }</td>
+				<td>
+				<c:if test="${not empty bean.fileOrgin }">
+				<a href="upload/${bean.filename }">${bean.fileOrgin }</a>
+				</c:if>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
+	<a href="add.do">[입력]</a>
 </body>
 </html>
